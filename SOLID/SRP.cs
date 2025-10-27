@@ -32,7 +32,7 @@
             Console.WriteLine($"Sending invoice {invoice.Id} to {email}");
         }
     }
-}
+
 
     /*internal class Invoice
     {
