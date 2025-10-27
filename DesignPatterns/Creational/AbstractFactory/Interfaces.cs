@@ -12,4 +12,14 @@
     internal interface ISuv : ICar
     {
     }
+
+    internal interface ISuvFactory
+    {
+        ISuv? CreateSuv(string segment);
+    }
+
+    internal interface ISedanFactory
+    {
+        ISedan? CreateSedan(string segment);
+    }
 }

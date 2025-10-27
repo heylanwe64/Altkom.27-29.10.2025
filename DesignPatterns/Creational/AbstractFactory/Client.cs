@@ -6,13 +6,13 @@
         {
             var order = new Order();
 
-            order.MakeOrder("Honda", "Compact", "Suv");
+            order.OrderSuv(new HondaFactory(), "Compact");
             Console.WriteLine("Ordered: " + order.CarName());
 
-            order.MakeOrder("Honda", "Full", "Sedan");
+            order.OrderSedan(new HondaFactory(), "Full");
             Console.WriteLine("Ordered: " + order.CarName());
 
-            order.MakeOrder("Toyota", "Compact", "Suv");
+            order.OrderSedan(new ToyotaFactory(), "Compact");
             Console.WriteLine("Ordered: " + order.CarName());
         }
     }

@@ -9,50 +9,14 @@
             return car?.Name;
         }
 
-        public void MakeOrder(string manufacturer, string type, string segment)
+        public void OrderSuv(ISuvFactory carFactory, string segment)
         {
-            switch (manufacturer)
-            {
-                case "Honda":
-                    car = type switch
-                    {
-                        "Compact" => segment switch
-                        {
-                            "Suv" => new HondaCompactSuv(),
-                            "Sedan" => new HondaCompactSedan(),
-                            _ => null
-                        },
-                        "Full" => segment switch
-                        {
-                            "Suv" => new HondaFullSuv(),
-                            "Sedan" => new HondaFullSedan(),
-                            _ => null
-                        },
-                        _ => null
-                    };
-                    break;
-                case "Toyota":
-                    car = type switch
-                    {
-                        "Compact" => segment switch
-                        {
-                            "Suv" => new ToyotaCompactSuv(),
-                            "Sedan" => new ToyotaCompactSedan(),
-                            _ => null
-                        },
-                        "Full" => segment switch
-                        {
-                            "Suv" => new ToyotaFullSuv(),
-                            "Sedan" => new ToyotaFullSedan(),
-                            _ => null
-                        },
-                        _ => null
-                    };
-                    break;
-                default:
-                    car = null;
-                    break;
-            }
+            car = carFactory.CreateSuv(segment);
+        }
+
+        public void OrderSedan(ISedanFactory carFactory, string segment)
+        {
+            car = carFactory.CreateSedan(segment);
         }
 
         //Jakaś logika główna zamówienia
