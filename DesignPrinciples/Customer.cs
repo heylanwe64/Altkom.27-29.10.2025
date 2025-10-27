@@ -12,11 +12,14 @@
         public float Income { get; set; }
         public float Outcome { get; set; }
         public float AllowedDebit { get; set; }
+        public bool IsDeleted { get; set; }
 
 
         public bool IsDebit()
         {
-            return Income - Outcome < 0;
+            return Balance < 0;
         }
+
+        public float Balance => Income - Outcome;
     }
 }

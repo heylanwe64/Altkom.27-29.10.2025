@@ -16,20 +16,25 @@
 
         public bool Charge(int customerId, float amount)
         {
-            var customer = Customers.SingleOrDefault(x => x.Id == customerId);
+            Customer? customer = FindById(customerId);
             if (customer == null)
                 return false;
 
-            if (customer.Income - customer.Outcome + customer.AllowedDebit < amount)
+            if (GetBalance(customerId) + customer.AllowedDebit < amount)
                 return false;
 
             customer.Outcome += amount;
             return true;
         }
 
+        private Customer? FindById(int customerId)
+        {
+            return Customers.Where(x => !x.IsDeleted).SingleOrDefault(x => x.Id == customerId);
+        }
+
         public void AddIncome(int customerId, float amount)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
+            var customer = FindById(customerId);
             if (customer == null)
                 return;
             customer.Income += amount;
@@ -37,8 +42,8 @@
 
         public float? GetBalance(int customerId)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
-            return customer?.Income - customer?.Outcome;
+            var customer = FindById(customerId);
+            return customer?.Balance;
         }
     }
 }
