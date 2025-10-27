@@ -2,6 +2,18 @@
 {
     internal class Vehicle
     {
+        //builder może występować jako klasa zagnieżdżona
+        //blokujemy tworzenie obiektów klasy Vehicle bezpośrednio
+        //i wymuszamy korzystanie z buildera
+        /*private Vehicle() { }
+        public class Builder
+        {
+            private readonly Vehicle _vehicle = new Vehicle();
+            //implementacja wzorca Builder
+        }*/
+
+        public Vehicle() { }
+
         public Vehicle(int wheels, int seats)
         {
             Wheels = wheels;
