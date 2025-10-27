@@ -14,12 +14,6 @@
         public float AllowedDebit { get; set; }
         public bool IsDeleted { get; set; }
 
-
-        public bool IsDebit()
-        {
-            return Balance < 0;
-        }
-
         public float Balance => Income - Outcome;
     }
 }
