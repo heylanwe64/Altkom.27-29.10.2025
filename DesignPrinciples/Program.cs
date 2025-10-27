@@ -1,15 +1,15 @@
 ﻿using DesignPrinciples;
 
-var service = new Class2();
+var service = new PaymentService();
 
-var custmerId = 1;
+var customerId = 1;
 
-service.Func2(custmerId, 500);
-if (service.Func1(custmerId, 100))
+service.AddIncome(customerId, 500);
+if (service.Charge(customerId, 100))
 {
-    Console.WriteLine($"Customer {custmerId} charged. Actual balace: {service.GetBalance(custmerId)}");
+    Console.WriteLine($"Customer {customerId} charged. Actual balance: {service.GetBalance(customerId)}");
 }
 else
 {
-    Console.WriteLine($"Customer {custmerId} cannot be charged. Actual balace: {service.GetBalance(custmerId)}");
+    Console.WriteLine($"Customer {customerId} cannot be charged. Actual balance: {service.GetBalance(customerId)}");
 }
