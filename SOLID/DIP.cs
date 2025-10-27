@@ -66,7 +66,7 @@
             Messages = messages;
         }
 
-        //wstrzykiwanie przez zależność
+        //wstrzykiwanie przez właściwość
         public IEnumerable<IMessage?> Messages { get; set; }
 
         //wstrzykiwanie przez metodę
