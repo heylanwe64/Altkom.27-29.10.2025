@@ -10,12 +10,9 @@
             if (customer == null)
                 return false;
 
-            if (GetBalance(customerId) + customer.AllowedDebit < amount)
-                return false;
-
-            customer.Outcome += amount;
-            return true;
+            return customer.TryCharge(amount);
         }
+
 
         private Customer? FindById(int customerId)
         {
@@ -27,13 +24,7 @@
             var customer = FindById(customerId);
             if (customer == null)
                 return;
-            customer.Income += amount;
-        }
-
-        public float? GetBalance(int customerId)
-        {
-            var customer = FindById(customerId);
-            return customer?.Balance;
+            customer.AddIncome(amount);
         }
     }
 }
