@@ -13,9 +13,13 @@
             builder.SetDoors(4);
             builder.SetTrunkCapacity(500);
             builder.SetEnginePower(100);
-            vehicle = builder.Build();
+            var vehicle1 = builder.Build();
 
-            Console.WriteLine(vehicle);
+            builder.SetEnginePower(150);
+            var vehicle2 = builder.Build();
+
+            Console.WriteLine(vehicle1);
+            Console.WriteLine(vehicle2);
 
             vehicle = new VehicleBuilder()
                  .SetWheels(4)

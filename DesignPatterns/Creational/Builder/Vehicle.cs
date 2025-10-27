@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Creational.Builder
 {
-    internal class Vehicle
+    internal class Vehicle : ICloneable
     {
         //builder może występować jako klasa zagnieżdżona
         //blokujemy tworzenie obiektów klasy Vehicle bezpośrednio
@@ -43,6 +43,11 @@
         public int Doors { get; set; }
         public int? TrunkCapacity { get; set; }
         public int? EnginePower { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
 
         public override string ToString()
         {
