@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36616.10 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPrinciples", "DesignPrinciples\DesignPrinciples.csproj", "{6AA68EC8-AA26-4B0B-9C3C-7A4B37F98D1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID", "SOLID\SOLID.csproj", "{AD477749-6460-45FB-9613-384D69AA40E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6AA68EC8-AA26-4B0B-9C3C-7A4B37F98D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA68EC8-AA26-4B0B-9C3C-7A4B37F98D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AA68EC8-AA26-4B0B-9C3C-7A4B37F98D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD477749-6460-45FB-9613-384D69AA40E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD477749-6460-45FB-9613-384D69AA40E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD477749-6460-45FB-9613-384D69AA40E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD477749-6460-45FB-9613-384D69AA40E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
