@@ -17,6 +17,16 @@
 
             Console.WriteLine(vehicle);
 
+            vehicle = new VehicleBuilder()
+                 .SetWheels(4)
+                .SetSeats(5)
+                .SetDoors(4)
+                .SetTrunkCapacity(500)
+                .SetEnginePower(100)
+                .Build();
+
+            Console.WriteLine(vehicle);
+
             vehicle = new Vehicle() { Doors = 4, EnginePower = 100, Seats = 5, TrunkCapacity = 500, Wheels = 4 };
             Console.WriteLine(vehicle);
         }
