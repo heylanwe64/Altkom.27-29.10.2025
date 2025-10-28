@@ -1,1 +1,1 @@
-﻿DesignPatterns.Creational.Singleton.Client.Execute();
+﻿DesignPatterns.Creational.ObjectPool.Client.Execute();
