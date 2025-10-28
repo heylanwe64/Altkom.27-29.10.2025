@@ -1,1 +1,1 @@
-﻿DesignPatterns.Structural.Adapter.I.Client.Execute();
+﻿DesignPatterns.Structural.Bridge.Client.Execute();
