@@ -1,1 +1,1 @@
-﻿DesignPatterns.Structural.Flyweight.Client.Execute();
+﻿DesignPatterns.Structural.Proxy.Client.Execute();
