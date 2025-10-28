@@ -4,7 +4,7 @@
     {
         public static void Execute()
         {
-            var objects = new AbstractObject[] { new RealObject(), null };
+            var objects = new AbstractObject[] { new RealObject(), new NullObject() };
 
             while (true)
             {
@@ -17,9 +17,9 @@
                 /*if (item is null)
                     continue;*/
 
-                item?.Method1();
-                item?.Method2();
-                item?.Method3();
+                item.Method1();
+                item.Method2();
+                item.Method3();
             }
         }
     }
