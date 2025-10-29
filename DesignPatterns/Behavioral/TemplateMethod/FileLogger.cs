@@ -1,35 +1,22 @@
 ﻿
 namespace DesignPatterns.Behavioral.TemplateMethod
 {
-    internal class FileLogger
+    internal class FileLogger : Logger<string, FileService>
     {
-        public void Log(object message)
-        {
-            var messageToLog = PrepareMessage(message);
-            var service = OpenFile();
-            WriteLogMessage(service, messageToLog);
-            CloseFile(service);
-        }
-
-        private void CloseFile(FileService service)
-        {
-            service.Dispose();
-        }
-
-        private void WriteLogMessage(FileService service, string messageToLog)
-        {
-            service.Write(messageToLog);
-        }
-
-        private FileService OpenFile()
+        protected override FileService GetService()
         {
             Console.WriteLine("Opening File.");
             return new FileService();
         }
 
-        private string PrepareMessage(object message)
+        protected override string CreateItem(string message)
         {
-            return $"{DateTime.Now}: {message}"; 
+            return message;
+        }
+
+        protected override void WriteLogMessage(FileService service, string item)
+        {
+            service.Write(item);
         }
     }
 }

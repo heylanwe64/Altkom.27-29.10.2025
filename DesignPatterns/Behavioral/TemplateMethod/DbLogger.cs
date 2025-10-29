@@ -1,38 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPatterns.Behavioral.TemplateMethod
+﻿namespace DesignPatterns.Behavioral.TemplateMethod
 {
-    internal class DbLogger
+    internal class DbLogger : Logger<DbLog, DbService>
     {
-        public void Log(string message)
-        {
-            var dbLog = CreateDbLog(message);
-            var service = OpenDbConnection();
-            InsertLogMessage(service, dbLog);
-            CloseDbConnection(service);
-        }
-
-        private void CloseDbConnection(DbService service)
-        {
-            service.Dispose();
-        }
-
-        private void InsertLogMessage(DbService service, DbLog dbLog)
-        {
-            service.Insert(dbLog);
-        }
-
-        private DbService OpenDbConnection()
+        protected override DbService GetService()
         {
             Console.WriteLine("Connecting to Database.");
             return new DbService();
         }
 
-        private DbLog CreateDbLog(string message)
+        protected override DbLog CreateItem(string message)
         {
             Console.WriteLine("Serializing message");
             return new DbLog
@@ -41,5 +17,16 @@ namespace DesignPatterns.Behavioral.TemplateMethod
                 DateTime = DateTime.Now
             };
         }
+
+        protected override void WriteLogMessage(DbService service, DbLog item)
+        {
+            service.Insert(item);
+        }
+
+        protected override string PrepareMessage(string message)
+        {
+            return message;
+        }
+
     }
 }

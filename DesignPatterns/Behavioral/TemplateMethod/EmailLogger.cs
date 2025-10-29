@@ -1,21 +1,25 @@
 ﻿namespace DesignPatterns.Behavioral.TemplateMethod
 {
-    internal class EmailLogger
+    internal class EmailLogger : Logger<Email, IDisposable>
     {
-        public void Log(string message)
-        {
-            var messageToLog = CreateEmail(message);
-            SendLogToEmail(messageToLog);
-        }
-
-        private Email CreateEmail(string message)
+        protected override Email CreateItem(string message)
         {
             Console.WriteLine("Serializing message");
             return new Email { Content = message };
         }
-        private void SendLogToEmail(Email email)
+
+        protected override IDisposable GetService()
         {
-            Console.WriteLine("Sending Email with Log Message : " + email.Content);
+            return null;
+        }
+
+        protected override void CloseService(IDisposable service)
+        {
+        }
+
+        protected override void WriteLogMessage(IDisposable service, Email item)
+        {
+            Console.WriteLine("Sending Email with Log Message : " + item.Content);
         }
     }
 }
