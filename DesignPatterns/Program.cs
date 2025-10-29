@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.Mediator.Client.Execute();
+﻿DesignPatterns.Behavioral.Memento.Client.Execute();
