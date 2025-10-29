@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.Interpreter.Client.Execute();
+﻿DesignPatterns.Behavioral.TemplateMethod.Client.Execute();
