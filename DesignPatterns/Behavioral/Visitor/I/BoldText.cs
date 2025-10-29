@@ -2,9 +2,9 @@
 {
     internal class BoldText : PlainText
     {
-        public override string ToHtml()
+        public override string Accept(IVisitor visitor)
         {
-            return $"<b>{Text}</b>";
+            return visitor.Visit(this);
         }
     }
 }

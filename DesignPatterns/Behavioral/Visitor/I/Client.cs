@@ -12,9 +12,10 @@
                 new HyperLink() { Text = "Hyperlink", Url = @"https:\\some.url.pl" }};
 
 
+            var htmlVisitor = new HtmlVisitor();
             foreach (var item in collection)
             {
-                Console.Write(item.ToHtml());
+                Console.Write(item.Accept(htmlVisitor));
             }
         }
     }

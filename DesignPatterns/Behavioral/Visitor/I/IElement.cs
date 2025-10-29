@@ -2,6 +2,6 @@
 {
     internal interface IElement
     {
-        string ToHtml();
+        string Accept(IVisitor visitor);
     }
 }
