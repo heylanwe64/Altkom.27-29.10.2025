@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.Command.Client.Execute();
+﻿DesignPatterns.Behavioral.Iterator.Client.Execute();
