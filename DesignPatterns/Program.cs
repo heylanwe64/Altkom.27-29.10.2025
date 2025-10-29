@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.State.Client.Execute();
+﻿DesignPatterns.Behavioral.Strategy.Client.Execute();
