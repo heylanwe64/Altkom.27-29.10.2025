@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.Memento.Client.Execute();
+﻿DesignPatterns.Behavioral.Observer.Client.Execute();
