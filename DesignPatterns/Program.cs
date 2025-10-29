@@ -1,1 +1,1 @@
-﻿DesignPatterns.Behavioral.NullObject.Client.Execute();
+﻿DesignPatterns.Behavioral.Command.Client.Execute();
